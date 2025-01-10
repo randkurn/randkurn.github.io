@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Aturan Rantai</title>
+    <style>
+        /* Dark theme styles */
+        :root {
+            --background-color: #121212;
+            --container-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --input-bg: #2a2a2a;
+            --button-bg: #4CAF50;
+            --button-hover: #45a049;
+            --shadow-color: rgba(0, 0, 0, 0.6);
+            --step-bg: #2e2e2e;
+            --formula-bg: #3a3a3a;
+            --border-color: #444;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px var(--shadow-color);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            padding: 8px;
+            width: 200px;
+            margin: 5px 0;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--button-hover);
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--button-bg);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+        }
+
+        .steps {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background-color: var(--step-bg);
+        }
+
+        .step {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: var(--step-bg);
+            border-left: 3px solid var(--button-bg);
+        }
+
+        .formula {
+            background-color: var(--formula-bg);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .exponent {
+            vertical-align: super;
+            font-size: 0.7em;
+        }
+
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .sub-step {
+            margin-left: 20px;
+            padding: 5px 0;
+            color: #aaa;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Aturan Rantai</h2>
+        
+        <marquee>Muhammad Randy Kurniawan - MKB 1C - 2405315</marquee>
+        <marquee>Tugas Matematika Teknik - Dr. Suprih Widodo S. Si., M. T.</marquee>
+        <div class="formula">
+            <strong>Rumus Dasar:</strong><br>
+            <span class="math">Jika y = u<span class="exponent">n</span>, maka<br>
+            y' = n×u<span class="exponent">n-1</span>×dx(u)</span>
+        </div>
+        
+        <div class="input-group">
+            <label>Masukkan nilai n (pangkat):</label><br>
+            <input type="number" id="pangkat" placeholder="Contoh: 2">
+        </div>
+        
+        <div class="input-group">
+            <label>Masukkan u (fungsi dalam):</label><br>
+            <input type="text" id="fungsi_u" placeholder="Contoh: 5x^3+3x^2">
+        </div>
+
+                <button onclick="mulaiHitung()">Hitung</button>
+
+        <button id="nextStepBtn" class="floating-btn" style="display: none;" onclick="showNextStep()">
+            Langkah Selanjutnya
+        </button>        
+                <div id="stepResults" class="steps">
+        
+                    <div id="stepsContainer"></div>
+        
+                </div>
+        
+            </div>
+    </div>
+
+    <script>
+function handleSingleTermPower(term, n) {
+    if (term.includes('x^')) {
+        let [coef, power] = term.split('x^');
+        coef = coef === '' ? 1 : parseFloat(coef);
+        power = parseInt(power);
+        let newCoef = Math.pow(coef, n);
+        let newPower = power * n;
+        return `${newCoef}x^${newPower}`;
+    } else if (term.includes('x')) {
+        let coef = term.split('x')[0];
+        coef = coef === '' ? 1 : parseFloat(coef);
+        let newCoef = Math.pow(coef, n);
+        return `${newCoef}x^${n}`;
+    } else {
+        // Konstanta
+        let newCoef = Math.pow(parseFloat(term), n);
+        return `${newCoef}`;
+    }
+}
+
+function handlePowerExpression(u, n) {
+    // Jika u hanya satu elemen, langsung proses pangkat
+    if (!u.includes('+') && !u.includes('-')) {
+        let result = handleSingleTermPower(u.trim(), n);
+        return {
+            steps: [`Menghitung (${u})^${n} = ${result}`],
+            result: result
+        };
+    }
+
+    // Jika u lebih kompleks, gunakan distribusi eksponen (opsional)
+    return distributeMultiplication(Math.pow(u, n), u);
+}
+        function formatExponent(expr) {
+            return expr.replace(/\^(\d+)/g, '<span class="exponent">$1</span>');
+        }
+
+        function hitungDxU(u) {
+    // Pisahkan string berdasarkan + atau -
+    let terms = u.split(/(?=[-+])/);
+    let steps = [];
+    let hasil = [];
+    
+    for (let term of terms) {
+        term = term.trim();
+        if (!term) continue;
+        
+        let stepExplanation = '';
+        let resultTerm = '';
+        
+        // Handle negative terms
+        let isNegative = term.startsWith('-');
+        term = term.replace(/^[+-]/, ''); // Remove leading + or -
+        
+        if (term.includes('x^')) {
+            let [coef, power] = term.split('x^');
+            coef = coef === '' ? '1' : parseFloat(coef) || 1;
+            if (isNegative) coef = -coef;
+            power = parseInt(power);
+            
+            let newCoef = power * coef;
+            let newPower = power - 1;
+            
+            stepExplanation = `Turunan dari ${isNegative ? '-' : ''}${formatExponent(term)} = ${newCoef}x<span class="exponent">${newPower}</span>`;
+            resultTerm = newPower === 0 ? `${newCoef}` : 
+                        newPower === 1 ? `${newCoef}x` : 
+                        `${newCoef}x^${newPower}`;
+        } else if (term.includes('x')) {
+            let coef = term.split('x')[0];
+            coef = coef === '' ? '1' : parseFloat(coef) || 1;
+            if (isNegative) coef = -coef;
+            resultTerm = `${coef}`;
+            stepExplanation = `Turunan dari ${isNegative ? '-' : ''}${term} = ${coef}`;
+        } else {
+            // Konstanta
+            resultTerm = '0';
+            stepExplanation = `Turunan dari ${isNegative ? '-' : ''}${term} = 0`;
+        }
+        
+        if (stepExplanation) {
+            steps.push(stepExplanation);
+            hasil.push(resultTerm);
+        }
+    }
+    
+    let combinedResult = combineTerms(hasil.join('+'));
+    
+    return {
+        steps: steps,
+        result: combinedResult
+    };
+}
+
+function combineTerms(expr) {
+    let terms = expr.split(/(?=[-+])/);
+    let coefficients = {
+        x3: 0,
+        x2: 0,
+        x1: 0,
+        constant: 0
+    };
+    
+    terms.forEach(term => {
+        term = term.trim();
+        if (!term) return;
+        
+        let isNegative = term.startsWith('-');
+        term = term.replace(/^[+-]/, '');
+        
+        if (term.includes('x^3')) {
+            let coef = parseFloat(term) || 1;
+            coefficients.x3 += isNegative ? -coef : coef;
+        } else if (term.includes('x^2')) {
+            let coef = parseFloat(term) || 1;
+            coefficients.x2 += isNegative ? -coef : coef;
+        } else if (term.includes('x')) {
+            let coef = term.replace('x', '') || 1;
+            coef = parseFloat(coef) || 1;
+            coefficients.x1 += isNegative ? -coef : coef;
+        } else {
+            let coef = parseFloat(term) || 0;
+            coefficients.constant += isNegative ? -coef : coef;
+        }
+    });
+    
+    let result = [];
+    if (coefficients.x3 !== 0) {
+        result.push(`${coefficients.x3 > 0 && result.length > 0 ? '+' : ''}${coefficients.x3}x^3`);
+    }
+    if (coefficients.x2 !== 0) {
+        result.push(`${coefficients.x2 > 0 && result.length > 0 ? '+' : ''}${coefficients.x2}x^2`);
+    }
+    if (coefficients.x1 !== 0) {
+        result.push(`${coefficients.x1 > 0 && result.length > 0 ? '+' : ''}${coefficients.x1}x`);
+    }
+    if (coefficients.constant !== 0) {
+        result.push(`${coefficients.constant > 0 && result.length > 0 ? '+' : ''}${coefficients.constant}`);
+    }
+    
+    return result.join('') || '0';
+}
+
+
+        function distributeMultiplication(n, expression) {
+            let terms = expression.split(/(?=[-+])/);
+            let steps = [];
+            let results = [];
+            
+            for (let term of terms) {
+                term = term.trim();
+                if (!term) continue;
+                
+                let multiplied = '';
+                if (term.includes('x^')) {
+                    let [coef, power] = term.split('x^');
+                    coef = coef === '' ? '1' : 
+                           coef === '+' ? '1' : 
+                           coef === '-' ? '-1' : 
+                           parseFloat(coef);
+                    multiplied = `${n * coef}x^${power}`;
+                    steps.push(`${n} × ${term} = ${multiplied}`);
+                } else if (term.includes('x')) {
+                    let coef = term.split('x')[0];
+                    coef = coef === '' ? '1' : 
+                           coef === '+' ? '1' : 
+                           coef === '-' ? '-1' : 
+                           parseFloat(coef);
+                    multiplied = `${n * coef}x`;
+                    steps.push(`${n} × ${term} = ${multiplied}`);
+                } else {
+                    let value = parseFloat(term);
+                    multiplied = `${n * value}`;
+                    steps.push(`${n} × ${term} = ${multiplied}`);
+                }
+                results.push(multiplied);
+            }
+            
+            let combinedResult = combineTerms(results.join('+'));
+            
+            return {
+                steps: steps,
+                result: combinedResult
+            };
+        }
+
+        function simplifyExpression(expr) {
+            return combineTerms(expr);
+        }
+        let currentStep = 0;
+        let allSteps = [];
+        let calculationData = null;
+
+        function prepareSteps(n, u, dxuResult, multiplicationResult) {
+            allSteps = [
+                {
+                    title: "Identifikasi Fungsi",
+                    content: `
+                        <p class="math">
+                            y = (${formatExponent(u)})<span class="exponent">${n}</span><br>
+                            n = ${n}<br>
+                            u = ${formatExponent(u)}
+                        </p>
+                    `
+                }
+            ];
+
+            // Menambahkan langkah-langkah turunan untuk setiap suku
+            dxuResult.steps.forEach((step, index) => {
+                allSteps.push({
+                    title: `Mencari Turunan Suku ke-${index + 1}`,
+                    content: `<p class="math">${step}</p>`
+                });
+            });
+
+            allSteps.push({
+                title: "Hasil dx(u)",
+                content: `<p class="math">dx(u) = ${formatExponent(dxuResult.result)}</p>`
+            });
+
+            // Menambahkan langkah-langkah perkalian dengan n
+            multiplicationResult.steps.forEach((step, index) => {
+                allSteps.push({
+                    title: `Mengalikan dengan ${n} (Suku ke-${index + 1})`,
+                    content: `<p class="math">${step}</p>`
+                });
+            });
+
+            allSteps.push({
+                title: "Hasil Perkalian dengan n",
+                content: `<p class="math">n×dx(u) = ${formatExponent(multiplicationResult.result)}</p>`
+            });
+
+            allSteps.push({
+                title: "Menuliskan Pangkat (n-1)",
+                content: `<p class="math">u<span class="exponent">${n-1}</span> = (${formatExponent(u)})<span class="exponent">${n-1}</span></p>`
+            });
+
+            allSteps.push({
+                title: "Hasil Akhir",
+                content: `<p class="math">y' = ${formatExponent(multiplicationResult.result)}×(${formatExponent(u)})<span class="exponent">${n-1}</span></p>`
+            });
+        }
+
+        function showNextStep() {
+            if (currentStep < allSteps.length) {
+                const step = allSteps[currentStep];
+                const stepHtml = `
+                    <div class="step">
+                        <strong>${step.title}</strong>
+                        ${step.content}
+                    </div>
+                `;
+                
+                document.getElementById('stepsContainer').innerHTML += stepHtml;
+                currentStep++;
+
+                if (currentStep === allSteps.length) {
+                    document.getElementById('nextStepBtn').style.display = 'none';
+                }
+            }
+        }
+
+        function mulaiHitung() {
+            const n = parseFloat(document.getElementById('pangkat').value);
+            const u = document.getElementById('fungsi_u').value.replace(/\s+/g, '');
+            
+            if (!n || !u) {
+                alert('Mohon isi semua input!');
+                return;
+            }
+
+            const dxuResult = hitungDxU(u);
+            const multiplicationResult = distributeMultiplication(n, dxuResult.result);
+
+            // Reset steps
+            currentStep = 0;
+            document.getElementById('stepsContainer').innerHTML = '';
+            
+            // Prepare all steps
+            prepareSteps(n, u, dxuResult, multiplicationResult);
+            
+            // Show first step and next button
+            document.getElementById('nextStepBtn').style.display = 'inline-block';
+            showNextStep();
+        }
+    </script>
+</body>
+</html>
