@@ -382,11 +382,16 @@ function combineTerms(expr) {
                 title: "Hasil dx(u)",
                 content: `<p class="math">dx(u) = ${formatExponent(dxuResult.result)}</p>`
             });
+            allSteps.push({
+                title: "Merubah posisi penempatan",
+                content: `<p class="math">y' = n × dx(u) × u<span class="exponent">n-1</span> </p>`
+            });
 
             // Menambahkan langkah-langkah perkalian dengan n
             multiplicationResult.steps.forEach((step, index) => {
+
                 allSteps.push({
-                    title: `Mengalikan dengan ${n} (Suku ke-${index + 1})`,
+                    title: `Perkalian n(${n}) dengan dx(u)`,
                     content: `<p class="math">${step}</p>`
                 });
             });
