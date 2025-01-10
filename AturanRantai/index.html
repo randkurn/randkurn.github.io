@@ -398,9 +398,12 @@ function combineTerms(expr) {
 
             allSteps.push({
                 title: "Menuliskan Pangkat (n-1)",
-                content: `<p class="math">u<span class="exponent">${n-1}</span> = (${formatExponent(u)})<span class="exponent">${n-1}</span></p>`
+                content: `<p class="math">u<span class="exponent">n-1</span> = (${formatExponent(u)})<span class="exponent">${n}-1</span></p>`
             });
-
+            allSteps.push({
+                title: "Menuliskan Hasil Pangkat (n-1)",
+                content: `<p class="math">u<span class="exponent">n-1</span> = (${formatExponent(u)})<span class="exponent">${n-1}</span></p>`
+            });
             allSteps.push({
                 title: "Hasil Akhir",
                 content: `<p class="math">y' = ${formatExponent(multiplicationResult.result)}×(${formatExponent(u)})<span class="exponent">${n-1}</span></p>`
