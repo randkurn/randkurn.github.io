@@ -59,3 +59,16 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+document.getElementById('twibbonForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const nama = document.getElementById('nama').value;
+  const programStudi = document.getElementById('programStudi').value;
+
+  // Contoh: Menampilkan alert dengan data yang diinput
+  alert(`Terima kasih, ${nama} dari ${programStudi}! Twibbon Anda sedang diproses.`);
+
+  // Anda bisa menambahkan logika untuk menampilkan twibbon dengan nama dan program studi di sini
+  // Contoh: Menambahkan teks ke gambar twibbon menggunakan canvas atau library seperti html2canvas
+});
