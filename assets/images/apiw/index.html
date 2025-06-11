@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html translate="no" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Selamat Sore ❤</title>
+	<meta name="author" content="Wafa Rifqi Anafin">
+	<meta name="author-link" content="https://wafarifqi.com">
+	<link rel="stylesheet" type="text/css" href="css/komponen.css" />
+	<link rel="stylesheet" type="text/css" href="css/animasi.css" />
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/modernizr.custom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		.confession-buttons {
+			display: flex;
+			gap: 20px;
+			justify-content: center;
+			margin-top: 30px;
+		}
+		
+		.btn-yes, .btn-no {
+			padding: 15px 30px;
+			font-size: 18px;
+			border: none;
+			border-radius: 25px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			font-weight: bold;
+		}
+		
+		.btn-yes {
+			background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+			color: white;
+		}
+		
+		.btn-yes:hover {
+			background: linear-gradient(45deg, #ff5252, #ff7979);
+			transform: scale(1.05);
+		}
+		
+		.btn-no {
+			background: linear-gradient(45deg, #74b9ff, #0984e3);
+			color: white;
+		}
+		
+		.btn-no:hover {
+			background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+			transform: scale(0.95);
+		}
+		
+		.success-message {
+			display: none;
+			text-align: center;
+			color: #ff6b6b;
+			font-size: 24px;
+			margin-top: 20px;
+		}
+		
+		.hearts {
+			font-size: 30px;
+			animation: heartbeat 1s ease-in-out infinite alternate;
+		}
+		
+		@keyframes heartbeat {
+			to {
+				transform: scale(1.2);
+			}
+		}
+	</style>
+</head>
+
+<body>
+    <audio id="audio" src="audio/audio.mp3"></audio>
+	<div id="ruang-halaman" class="tempat-halaman">
+		<div class="halaman halaman-1">
+			<div class="kotak">
+				<h1 class="ml1">
+					<span class="text-wrapper">
+						<span class="line line1"></span>
+						<span class="letters">HALOOOOO Afiiwww</span>
+						<span class="line line2"></span>
+					</span>
+				</h1>
+				<div class="tempat-tombol">
+					<button id="tombolMulaiSekarang" class="mulai-sekarang">Mulai Sekarang</button>
+				</div>
+			</div>
+		</div>
+		<div class="halaman halaman-2">
+			<div class="kotak">
+			  <h1 class="ml15">
+				<span class="word">Haiii</span>
+				<span class="word">Afriii 😁</span>
+			  </h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-3">
+			<div class="kotak">
+			  <h1 class="ml16">Gimana harimu hari ini? Semoga nggak sesibuk mikirin aku ya	&#128517;</h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-4">
+			<div class="kotak">
+			  <h1 class="ml11">
+				<span class="text-wrapper">
+				  <span class="line line1"></span>
+				  <span class="letters">Aku ada yang pengen disampein nih... hehe</span>
+				</span>
+			  </h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-5">
+			<div class="kotak">
+			  <h1 class="ml9">
+				<span class="text-wrapper">
+				  <span class="letters">Agak deg-degan sih ngomongnya... ahahaha</span>
+				</span>
+			  </h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-6">
+			<div class="kotak">
+			  <h1 class="ml2">Tapi yaudah lah ya, YOLO &#128526;</h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-7">
+			<div class="kotak">
+			  <h1 class="ml4">
+				<span class="letters letters-1">Aku suka kamu</span>
+				<span class="letters letters-2">Aku nyaman sama kamu</span>
+				<span class="letters letters-3">Dan aku pengen lebih deket sama kamu</span>
+			  </h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-8">
+			<div class="kotak">
+			  <h1 class="ml12">Tenang aja, aku nggak gigit kok🤣</h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-9">
+			<div class="kotak">
+			  <h1 class="ml14">
+				<span class="text-wrapper">
+				  <span class="letters">Kalau kamu ngerasa yang sama... yaa...</span>
+				  <span class="line"></span>
+				</span>
+			  </h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-10">
+			<div class="kotak">
+			  <h1 class="ml7">
+				<span class="text-wrapper">
+				  <span class="letters">
+					<img src="gambar/gambar.jpg" id="gambar" style="display: none;">
+					<h1 class="ml13">Mau gak kita jadi “kita”? 💖 eheh</h1>
+				  </span>
+				</span>
+			  </h1>
+			</div>
+		  </div>
+		  
+		  <div class="halaman halaman-11">
+			<div class="kotak">
+			  <h1 class="ml2">Afri, mau gak jadi pacarku? 🥺</h1>
+			  <div class="confession-buttons">
+				<button class="btn-yes" id="btnYes">Mau dong 😚</button>
+				<button class="btn-no" id="btnNo">Hmm... nanti ya</button>
+			  </div>
+			  <div class="success-message" id="successMessage">
+				<div class="hearts">💞💘💞💘💞</div>
+				<p>YAHOOOOO! 🥳</p>
+				<p>Kita jadian!! Siap-siap dapet perhatian 24/7 😎✨</p>
+				<div class="hearts">💞💘💞💘💞</div>
+			  </div>
+			</div>
+		  </div>
+		  
+		</div>
+	</div>
+
+	<div class="pesan-ga-support-animasi">
+		<p>Browser Ga Support CSS Gan! Ganti Browser Dulu Ea</p>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/transisi.js"></script>
+	<script src="js/salju.js" type="text/javascript"></script>
+	
+	<script>
+		// Array of "No" button texts
+		const noTexts = [
+			"No",
+			"Are you sure?",
+			"Really sure?",
+			"Think again!",
+			"Last chance!",
+			"Surely not?",
+			"You might regret this!",
+			"Give it another thought!",
+			"Are you absolutely certain?",
+			"This could be a mistake!",
+			"U Have a heart!💕",
+			"Don't be so cold!",
+			"Wouldn't you reconsider?",
+			"Is that your final answer?",
+			"You're breaking my heart ;(",
+			"But... why? 😢",
+			"Please, pretty please? 💖",
+			"I can't take this! 😫",
+			"Are you sure you want to do this to me? 😢",
+			"You're gonna hurt my feelings! 😥",
+			"I need you to reconsider, like now! 😓",
+			"I believe in you, don't disappoint me! 💔",
+			"My heart says yes, what about yours? ❤️",
+			"Don't leave me hanging! 😬",
+			"Plsss? :( You're breaking my heart 💔"
+		];
+
+		let noClickCount = 0;
+
+		$(document).ready(function() {
+			// Yes button click handler
+			$('#btnYes').click(function() {
+				$('.confession-buttons').hide();
+				$('#successMessage').fadeIn(1000);
+				
+				// Add some confetti effect or celebration
+				setTimeout(function() {
+					// You can add confetti animation here
+					$('body').append('<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;"><div style="animation: confetti 3s ease-out forwards;">🎉🎊💕❤️🥰</div></div>');
+				}, 500);
+			});
+
+			// No button click handler
+			$('#btnNo').click(function() {
+				if (noClickCount < noTexts.length - 1) {
+					noClickCount++;
+					$(this).text(noTexts[noClickCount]);
+					
+					// Make the Yes button bigger and more attractive
+					$('#btnYes').css({
+						'transform': 'scale(' + (1 + noClickCount * 0.001) + ')',
+						'background': 'linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffb3ba)',
+						'box-shadow': '0 0 ' + (10 + noClickCount * 5) + 'px rgba(255, 107, 107, 0.5)'
+					});
+
+					// Make the No button smaller and less attractive
+					$(this).css({
+						'transform': 'scale(' + (1 - noClickCount * 0.005) + ')',
+						'opacity': (1 - noClickCount * 0.01)
+					});
+
+					// Add shake animation to No button
+					$(this).addClass('shake');
+					setTimeout(() => {
+						$(this).removeClass('shake');
+					}, 500);
+				} else {
+					// After all attempts, force Yes
+					$(this).text("Fine... Yes! 😤💕");
+					$(this).removeClass('btn-no').addClass('btn-yes');
+					$(this).off('click');
+					$(this).click(function() {
+						$('#btnYes').click();
+					});
+				}
+			});
+		});
+
+		// Add shake animation CSS
+		$('<style>').text(`
+			@keyframes shake {
+				0%, 100% { transform: translateX(0); }
+				25% { transform: translateX(-5px); }
+				75% { transform: translateX(5px); }
+			}
+			.shake {
+				animation: shake 0.5s ease-in-out;
+			}
+		`).appendTo('head');
+	</script>
+</body>
+
+</html>
