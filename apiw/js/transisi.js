@@ -316,6 +316,7 @@ var PageTransitions = (function () {
                 var textWrapper = document.querySelector('.ml7 .letters');
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+                $("#gambar").fadeIn(1000);
                 anime.timeline({
                         loop: false
                     })
@@ -339,7 +340,7 @@ var PageTransitions = (function () {
             case 10:
                 outClass = 'halaman-rotateCarouselTopOut halaman-ontop';
                 inClass = 'halaman-rotateCarouselTopIn';
-                $("#gambar").fadeIn(3000);
+                $("#gambar2").fadeIn(3000);
 
                 var textWrapper = document.querySelector('.ml13');
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
