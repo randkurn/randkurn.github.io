@@ -64,7 +64,11 @@
 			font-size: 30px;
 			animation: heartbeat 1s ease-in-out infinite alternate;
 		}
-		
+		#btnKaloDiterima {
+	display: none;
+	margin-top: 20px;
+}
+
 		@keyframes heartbeat {
 			to {
 				transform: scale(1.2);
@@ -94,14 +98,19 @@
 			<div class="kotak">
 			  <h1 class="ml15">
 				<span class="word">Haiii</span>
-				<span class="word">Afriii 😁</span>
+				<span class="word">Afrii 😁</span>
+				<br>
+				<span class="word">Selamat</span>
+				
+				<span class="word">Pagi/Siang/Sore/Malam kapanpun kamu membuka ini 😁</span>
 			  </h1>
 			</div>
 		  </div>
 		  
 		  <div class="halaman halaman-3">
 			<div class="kotak">
-			  <h1 class="ml16">Gimana harimu hari ini? Semoga nggak sesibuk mikirin aku ya</h1>
+			  <h1 class="ml16">Gimana harimu hari ini? 
+				<br>Semoga nggak sesibuk mikirin aku ya</h1>
 			</div>
 		  </div>
 		  
@@ -110,7 +119,8 @@
 			  <h1 class="ml11">
 				<span class="text-wrapper">
 				  <span class="line line1"></span>
-				  <span class="letters">Aku ada yang pengen disampein nih... hehe</span>
+				  <span class="letters">Aku ada yang <br>
+					pengen disampein nih... hehe</span>
 				</span>
 			  </h1>
 			</div>
@@ -120,7 +130,8 @@
 			<div class="kotak">
 			  <h1 class="ml9">
 				<span class="text-wrapper">
-				  <span class="letters">Agak deg-degan sih ngomongnya... ahahaha</span>
+				  <span class="letters">Agak deg-degan 
+					<br>sih ngomongnya... ahahaha</span>
 				</span>
 			  </h1>
 			</div>
@@ -137,14 +148,16 @@
 			  <h1 class="ml4">
 				<span class="letters letters-1">Aku suka kamu</span>
 				<span class="letters letters-2">Aku nyaman sama kamu</span>
-				<span class="letters letters-3">Dan aku pengen lebih deket sama kamu</span>
+				<span class="letters letters-3">Dan aku 
+					<br>pengen lebih 
+					<br>deket sama kamu</span>
 			  </h1>
 			</div>
 		  </div>
 		  
 		  <div class="halaman halaman-8">
 			<div class="kotak">
-			  <h1 class="ml12">Tenang aja, aku nggak gigit kok</h1>
+			  <h1 class="ml12">Tenang aja, <br>aku nggak gigit kok</h1>
 			</div>
 		  </div>
 		  
@@ -152,7 +165,8 @@
 			<div class="kotak">
 			  <h1 class="ml14">
 				<span class="text-wrapper">
-				  <span class="letters">Kalau kamu ngerasa yang sama... yaa...</span>
+				  <span class="letters">Kalau kamu 
+					<br>ngerasa yang sama... yaa...</span>
 				  <span class="line"></span>
 				</span>
 			  </h1>
@@ -165,7 +179,8 @@
 				<span class="text-wrapper">
 				  <span class="letters">
 					<img src="gambar/gambar.jpg" id="gambar" style="display: none;">
-					<h1 class="ml13">Mau gak kita jadi “kita”? eheh</h1>
+					<h1 class="ml13">Mau gak kalo kita 
+						<br>jadi “kita”? eheh</h1>
 				  </span>
 				</span>
 			  </h1>
@@ -176,7 +191,9 @@
 			<div class="kotak">
 				
 					<img src="gambar/gambar.jpg" id="gambar2" style="display: none;">
-			  <h1 class="ml2">Afri, mau gak jadi pacarku?</h1>
+			  <h1 class="ml2">Hari ini, 13 Juni, mungkin biasa buat orang lain. 
+				<br>Tapi aku ingin bikin hari ini luar biasa 
+				<br>— karena aku ingin kamu jadi bagian dari hidupku mulai sekarang.</h1>
 			  <div class="confession-buttons">
 				<button class="btn-yes" id="btnYes">Mau dong</button>
 				<button class="btn-no" id="btnNo">Hmm... nanti ya</button>
@@ -185,6 +202,9 @@
 				<div class="hearts">💞💘💞💘💞</div>
 				<p>YAHOOOOO! 🥳</p>
 				<p>Kita jadian!! Siap-siap dapet perhatian 24/7 😎✨</p>
+				
+				<a class="btn-yes" id="btnKaloDiterima" target="_blank" href="https://wa.me/6281398544575?text=Aku%20pilih%20YESSSS%20Rand!%20%F0%9F%A5%B3%F0%9F%92%8D%20Mulai%20hari%20ini%2C%20kita%20adalah%20%22kita%22%20ya%21%20%F0%9F%98%8D">Kabarin Kamu di Sini 💬</a>
+
 				<div class="hearts">💞💘💞💘💞</div>
 			  </div>
 			</div>
@@ -233,54 +253,57 @@
 
 		let noClickCount = 0;
 
-		$(document).ready(function() {
-			// Yes button click handler
-			$('#btnYes').click(function() {
-				$('.confession-buttons').hide();
-				$('#successMessage').fadeIn(1000);
-				
-				// Add some confetti effect or celebration
-				setTimeout(function() {
-					// You can add confetti animation here
-					$('body').append('<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;"><div style="animation: confetti 3s ease-out forwards;">🎉🎊💕❤️🥰</div></div>');
-				}, 500);
+$(document).ready(function () {
+	// Yes button click handler
+	$('#btnYes').click(function () {
+		$('.confession-buttons').hide();
+		$('#successMessage').fadeIn(1000);
+
+		// Tampilkan tombol WhatsApp setelah 1 detik
+		setTimeout(function () {
+			$('#btnKaloDiterima').show();
+		}, 1000);
+
+		// Tambahkan efek konfeti
+		setTimeout(function () {
+			$('body').append('<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;"><div style="animation: confetti 3s ease-out forwards; font-size: 40px; text-align: center; margin-top: 20%;">🎉🎊💕❤️🥰</div></div>');
+		}, 500);
+	});
+
+	// No button click handler
+	$('#btnNo').click(function () {
+		if (noClickCount < noTexts.length - 1) {
+			noClickCount++;
+			$(this).text(noTexts[noClickCount]);
+
+			// Ubah tampilan tombol Yes
+			$('#btnYes').css({
+				'transform': 'scale(' + (1 + noClickCount * 0.001) + ')',
+				'background': 'linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffb3ba)',
+				'box-shadow': '0 0 ' + (10 + noClickCount * 5) + 'px rgba(255, 107, 107, 0.5)'
 			});
 
-			// No button click handler
-			$('#btnNo').click(function() {
-				if (noClickCount < noTexts.length - 1) {
-					noClickCount++;
-					$(this).text(noTexts[noClickCount]);
-					
-					// Make the Yes button bigger and more attractive
-					$('#btnYes').css({
-						'transform': 'scale(' + (1 + noClickCount * 0.001) + ')',
-						'background': 'linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffb3ba)',
-						'box-shadow': '0 0 ' + (10 + noClickCount * 5) + 'px rgba(255, 107, 107, 0.5)'
-					});
-
-					// Make the No button smaller and less attractive
-					$(this).css({
-						'transform': 'scale(' + (1 - noClickCount * 0.005) + ')',
-						'opacity': (1 - noClickCount * 0.01)
-					});
-
-					// Add shake animation to No button
-					$(this).addClass('shake');
-					setTimeout(() => {
-						$(this).removeClass('shake');
-					}, 500);
-				} else {
-					// After all attempts, force Yes
-					$(this).text("Fine... Yes! 😤💕");
-					$(this).removeClass('btn-no').addClass('btn-yes');
-					$(this).off('click');
-					$(this).click(function() {
-						$('#btnYes').click();
-					});
-				}
+			// Ubah tampilan tombol No
+			$(this).css({
+				'transform': 'scale(' + (1 - noClickCount * 0.005) + ')',
+				'opacity': (1 - noClickCount * 0.01)
 			});
-		});
+
+			// Efek shake
+			$(this).addClass('shake');
+			setTimeout(() => {
+				$(this).removeClass('shake');
+			}, 500);
+		} else {
+			// Ganti teks jadi "Kabarin aku di sini ya..."
+			$(this).text("Kabarin aku di sini ya...");
+			$(this).off('click');
+			$(this).click(function () {
+				window.open("https://wa.me/6281398544575?text=Maaf%20aku%20belum%20bisa%20tapi%20makasih%20ya%20udah%20nyampein%20perasaannya%20😭", "_blank");
+			});
+		}
+	});
+});
 
 		// Add shake animation CSS
 		$('<style>').text(`
