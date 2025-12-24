@@ -6,236 +6,744 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Muhammad Randy Kurniawan | Portfolio</title>
-  <meta name="title" content="Muhammad Randy Kurniawan - Portfolio">
-  <meta name="description" content="Personal portfolio of Muhammad Randy Kurniawan">
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Randy Kurniawan - Mechatronics & AI Engineer</title>
+  <meta name="title" content="Muhammad Randy Kurniawan - Mechatronics & AI Engineer">
+  <meta name="description" content="Portfolio of Muhammad Randy Kurniawan - Mechatronics AI student, digital marketing specialist, and project leader">
 
+  <!-- 
+    - favicon
+  -->
   <link rel="shortcut icon" href="./logo.png" type="image/svg+xml">
 
+  <!-- 
+    - google font link
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/font/font.css">
+
+  <!-- 
+    - custom css link
+  -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!-- 
+    - preload images
+  -->
   <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-1.png">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
+
 </head>
 
 <body id="top">
+
+  <!-- 
+    - #PRELOADER
+  -->
 
   <div class="preloader" data-preloader>
     <span class="line"></span>
   </div>
 
-  <!-- HEADER -->
+
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
   <header class="header" data-header>
     <div class="container">
 
       <a href="#" class="logo">
-        <h1 class="h4 title">randkurn.</h1>
+        <h1 class="h4 title" style="width: 84; height: 26;">randkurn.</h1>
       </a>
 
       <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo">
+            <h1 class="h4 title">randkurn.</h1>
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
         <ul class="navbar-list">
-          <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
-          <li><a href="#service" class="navbar-link" data-nav-link>Services</a></li>
-          <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
-          <li><a href="#project" class="navbar-link" data-nav-link>Projects</a></li>
+
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#experience" class="navbar-link" data-nav-link>Experience</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li>
+            <a href="#project" class="navbar-link" data-nav-link>Projects</a>
+          </li>
+
+          <li>
+            <a href="#organization" class="navbar-link" data-nav-link>Organization</a>
+          </li>
         </ul>
       </nav>
 
-      <a href="https://drive.google.com/file/d/1srpf1x-M6ZT5BAd2YvkuXOpOllghru3-/view"
-        class="btn btn:hover" target="_blank">
-        <span class="span">Download CV</span>
-        <ion-icon name="cloud-download-outline"></ion-icon>
+      <a href="mailto:randy@upi.edu" class="btn btn:hover">
+        <span class="span">Contact Me</span>
+
+        <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
       </a>
 
-      <button class="nav-open-btn btn:hover" data-nav-toggler>
+      <button class="nav-open-btn btn:hover" aria-label="open menu" data-nav-toggler>
         <span class="line line-1"></span>
         <span class="line line-2"></span>
       </button>
 
       <div class="overlay" data-overlay data-nav-toggler></div>
+
     </div>
   </header>
+
+
+
+
 
   <main>
     <article>
 
-      <!-- HERO -->
-      <section class="hero text-center" id="home">
+      <!-- 
+        - #HERO
+      -->
+
+      <div class="hero text-center" id="home">
         <div class="container">
 
           <div class="banner-outline has-after">
+
             <div class="hero-banner img-holder has-after" style="--width: 500; --height: 680;" data-tilt>
-<<<<<<< HEAD
-              <img src="./assets/images/hero-banner.jpeg" alt="Muhammad Randy Kurniawan" class="img-cover">
-=======
               <img src="./assets/images/hero-banner.jpeg" width="500" height="680" alt="Muhammad Randy Kurniawan" class="img-cover">
->>>>>>> 61e0dd197e52b6176cf5c1502b42ba3fab0badff
             </div>
+
             <span class="span title">Muhammad Randy Kurniawan</span>
+
           </div>
 
           <div class="hero-content">
-            <h1 class="h1 title">
-              Developing ideas into real-world engineering solutions
-            </h1>
 
-            <p class="hero-text">
-              Mechatronics & Artificial Intelligence undergraduate with strong interests in backend systems,
-              engineering solutions, and leadership.
-            </p>
+            <h1 class="h1 title">Mechatronics AI Engineer & Digital Innovator</h1>
+
+            <div class="wrapper">
+              <a href="https://drive.google.com/file/d/1srpf1x-M6ZT5BAd2YvkuXOpOllghru3-/view?usp=drivesdk" class="btn btn:hover" target="_blank">
+                <span class="span">Download CV</span>
+
+                <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
+              </a>
+
+              <p class="hero-text">
+                Bridging robotics, AI, and digital solutions to create innovative engineering projects
+              </p>
+            </div>
+
           </div>
-        </div>
-      </section>
 
-      <!-- SERVICES -->
-      <section class="service text-center" id="service">
+          <img src="./assets/images/hero-shape-1.png" width="559" height="232" alt="shape" class="shape shape-1">
+
+          <img src="./assets/images/hero-shape-2.png" width="1358" height="497" alt="shape" class="shape shape-2">
+
+        </div>
+      </div>
+
+
+
+
+
+      <!-- 
+        - #EXPERIENCE
+      -->
+
+      <section class="service text-center" aria-label="work experience" id="experience">
         <div class="container">
+
+          <h2 class="h2 section-title" style="margin-bottom: 50px;">Work Experience</h2>
+
           <ul class="service-list">
 
             <li class="service-item">
               <div class="service-card">
-                <h3 class="card-title">Web Development</h3>
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-3.svg" width="80" height="80" loading="lazy"
+                    alt="service icon">
+                </div>
+
+                <h3 class="card-title">
+                  <a href="#">
+                    Extracurricular Coach<br>
+                    Mechatronics
+                  </a>
+                </h3>
+
+                <p style="margin-top: 10px; font-size: 14px;">SMPN 1 Purwakarta | Sept 2025 – Present</p>
+
               </div>
             </li>
 
             <li class="service-item">
               <div class="service-card">
-                <h3 class="card-title">Backend Development</h3>
-              </div>
-            </li>
 
-            <li class="service-item">
-              <div class="service-card">
-                <h3 class="card-title">Technical Support</h3>
-              </div>
-            </li>
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-2.svg" width="80" height="80" loading="lazy"
+                    alt="service icon">
+                </div>
 
-            <li class="service-item">
-              <div class="service-card">
-                <h3 class="card-title">Digital Marketing</h3>
+                <h3 class="card-title">
+                  <a href="#">
+                    Digital Marketing<br>
+                    Intern
+                  </a>
+                </h3>
+
+                <p style="margin-top: 10px; font-size: 14px;">CV Apindo Brother Sukses | July – Oct 2022</p>
+
               </div>
             </li>
 
           </ul>
+
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section class="section about" id="about">
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" aria-label="about-me" id="about">
         <div class="container">
 
           <div class="tab-container">
 
             <ul class="tab-btn-list">
+
               <li class="tab-btn-item">
-                <button class="tab-btn title h6 active" data-tab-btn="about">About</button>
+                <button class="tab-btn title h6 active" data-tab-btn="about">About Me</button>
               </li>
+
               <li class="tab-btn-item">
-                <button class="tab-btn title h6" data-tab-btn="skillset">Skillset</button>
+                <button class="tab-btn title h6" data-tab-btn="skillset">Skills & Education</button>
               </li>
+
               <li class="tab-btn-item">
-                <button class="tab-btn title h6" data-tab-btn="organization">Organization</button>
+                <button class="tab-btn title h6" data-tab-btn="leadership">Leadership</button>
               </li>
+
             </ul>
 
-            <!-- ABOUT TAB -->
             <div class="tab-content active" data-tab-content="about">
-              <div class="about-content">
-                <h2 class="h4 title section-title">Mechatronics & Artificial Intelligence</h2>
-                <p class="section-text">
-                  Undergraduate student at Universitas Pendidikan Indonesia with a background in software
-                  engineering. Experienced in engineering projects, leadership, and technical mentoring.
-                </p>
+              <div class="grid-list">
+
+                <figure class="about-banner img-holder" style="--width: ; --height: ;" data-tilt>
+                  <img src="./assets/images/about-banner.jpg" width="570" height="420" loading="lazy" alt="about banner"
+                    class="img-cover">
+                </figure>
+
+                <div class="about-content">
+
+                  <h2 class="h4 title section-title">
+                    Mechatronics & Artificial Intelligence Student
+                  </h2>
+
+                  <p class="section-text">
+                    Currently pursuing Bachelor of Engineering in Mechatronics AI at Universitas Pendidikan Indonesia (GPA 3.79/4.00). 
+                    Graduated from SMKN 5 Kota Bekasi majoring in Software Engineering. Passionate about integrating robotics, 
+                    electronics, and AI to solve real-world problems through innovative engineering solutions.
+                  </p>
+
+                  <ul class="about-list">
+
+                    <li class="about-item">
+                      <p class="list-title">Name</p>
+
+                      <span class="span title h5">Muhammad Randy Kurniawan</span>
+                    </li>
+
+                    <li class="about-item">
+                      <p class="list-title">Phone Number</p>
+
+                      <span class="span title h5">+62 813 9854 4575</span>
+                    </li>
+
+                    <li class="about-item">
+                      <p class="list-title">Email Address</p>
+
+                      <span class="span title h5">randy@upi.edu</span>
+                    </li>
+
+                    <li class="about-item">
+                      <p class="list-title">Website</p>
+
+                      <span class="span title h5">randkurn.github.io</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
               </div>
             </div>
 
-            <!-- SKILLSET TAB -->
             <div class="tab-content" data-tab-content="skillset">
-              <div class="about-content">
-                <ul class="about-list">
-                  <li class="about-item">
-                    <p class="list-title">Programming</p>
-                    <span class="span title h5">HTML, CSS, PHP, JavaScript</span>
-                  </li>
-                  <li class="about-item">
-                    <p class="list-title">Tools</p>
-                    <span class="span title h5">Git, VS Code, Adobe Photoshop</span>
-                  </li>
-                  <li class="about-item">
-                    <p class="list-title">Languages</p>
-                    <span class="span title h5">Bahasa Indonesia, English</span>
-                  </li>
-                </ul>
+              <div class="grid-list">
+
+                <div class="skill-content">
+
+                  <h3 class="h4 title section-title">
+                    Technical Skills & Expertise
+                  </h3>
+
+                  <p class="section-text">
+                    Combining engineering fundamentals with digital proficiency to deliver comprehensive solutions 
+                    in mechatronics, web development, and digital marketing.
+                  </p>
+
+                  <ul class="skill-list">
+
+                    <li>
+                      <div class="skill-wrapper">
+                        <span class="span">Web Development (HTML, CSS, PHP)</span>
+
+                        <span class="value">90%</span>
+                      </div>
+
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="skill-wrapper">
+                        <span class="span">Mechatronics & Robotics</span>
+
+                        <span class="value">85%</span>
+                      </div>
+
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="skill-wrapper">
+                        <span class="span">Digital Marketing & SEO</span>
+
+                        <span class="value">80%</span>
+                      </div>
+
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%"></div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="skill-wrapper">
+                        <span class="span">Adobe Photoshop & Design</span>
+
+                        <span class="value">75%</span>
+                      </div>
+
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h4 title section-title" style="margin-top: 40px;">
+                    Education
+                  </h3>
+
+                  <p class="section-text" style="margin-bottom: 10px;">
+                    <strong>Universitas Pendidikan Indonesia</strong> (Aug 2024 – Present)<br>
+                    Bachelor of Engineering, Mechatronics AI | GPA: 3.79/4.00
+                  </p>
+
+                  <p class="section-text">
+                    <strong>SMKN 5 Kota Bekasi</strong> (June 2021 – June 2024)<br>
+                    Software Engineering | Average Score: 87/100
+                  </p>
+
+                </div>
+
+                <figure class="skill-banner img-holder" style="--width: 570; --height: 420;" data-tilt>
+                  <img src="./assets/images/skill-banner.jpg" width="570" height="420" loading="lazy" alt="skill banner"
+                    class="img-cover">
+                </figure>
+
               </div>
             </div>
 
-            <!-- ORGANIZATION TAB -->
-            <div class="tab-content" data-tab-content="organization">
-              <div class="about-content">
-                <h3 class="h4 title section-title">Leadership & Organizational Experience</h3>
+            <div class="tab-content" data-tab-content="leadership">
+              <div class="grid-list">
 
-                <ul class="about-list">
-                  <li class="about-item">
-                    <p class="list-title">Chief Executive</p>
-                    <span class="span title h5">ISOLA Sport Fest 2025</span>
-                  </li>
-                  <li class="about-item">
-                    <p class="list-title">Head of Hacker Division</p>
-                    <span class="span title h5">Algorithmia Fest 2.0</span>
-                  </li>
-                  <li class="about-item">
-                    <p class="list-title">Chief Executive</p>
-                    <span class="span title h5">HIMATRONIKA-AI Leaders’ Preparation</span>
-                  </li>
-                  <li class="about-item">
-                    <p class="list-title">Vice Chief Executive</p>
-                    <span class="span title h5">METASTRO 2025</span>
-                  </li>
-                  <li class="about-item">
-                    <p class="list-title">Staff PSDO</p>
-                    <span class="span title h5">HIMATRONIKA-AI</span>
-                  </li>
-                  <li class="about-item">
-                    <p class="list-title">Mentor Staff</p>
-                    <span class="span title h5">MOKAKU UPI Purwakarta</span>
-                  </li>
-                  <li class="about-item">
-                    <p class="list-title">Formateur</p>
-                    <span class="span title h5">FORBES UPI Bekasi</span>
-                  </li>
-                </ul>
+                <div class="skill-content">
+
+                  <h3 class="h4 title section-title">
+                    Leadership Experience
+                  </h3>
+
+                  <p class="section-text">
+                    Proven track record in leading large-scale events and managing cross-functional teams 
+                    to achieve organizational goals and deliver exceptional results.
+                  </p>
+
+                  <div style="margin-top: 30px;">
+                    <h4 class="h5 title" style="margin-bottom: 10px;">Chief Executive - ISOLA SPORT FEST 2025</h4>
+                    <p class="section-text" style="font-size: 14px; margin-bottom: 20px;">
+                      Led Purwakarta's largest annual high school sports competition with 500+ participants. 
+                      Managed 120+ committee members across 11 divisions and secured partnerships with 10+ local sponsors.
+                    </p>
+
+                    <h4 class="h5 title" style="margin-bottom: 10px;">Head of Hacker Division - Algorithmia Fest 2.0</h4>
+                    <p class="section-text" style="font-size: 14px; margin-bottom: 20px;">
+                      Managed registration for 100+ participants, designed invitation materials for 10+ schools, 
+                      and directed technical briefings for SNBT TryOut events.
+                    </p>
+
+                    <h4 class="h5 title" style="margin-bottom: 10px;">Chief Executive - HIMATRONIKA-AI Leaders' Prep 2025</h4>
+                    <p class="section-text" style="font-size: 14px; margin-bottom: 20px;">
+                      Orchestrated leadership training for 190+ new officers, streamlined coordination across divisions, 
+                      and evaluated performance metrics for continuous improvement.
+                    </p>
+
+                    <h4 class="h5 title" style="margin-bottom: 10px;">Team Leader - OURTHINKS Project Group</h4>
+                    <p class="section-text" style="font-size: 14px;">
+                      Led 5-member team in dual-track projects, optimized workflows resolving 15+ bottlenecks, 
+                      and analyzed metrics to drive iterative improvements.
+                    </p>
+                  </div>
+
+                </div>
+
+                <figure class="skill-banner img-holder" style="--width: 570; --height: 420;" data-tilt>
+                  <img src="./assets/images/about-banner.jpg" width="570" height="420" loading="lazy" alt="leadership banner"
+                    class="img-cover">
+                </figure>
 
               </div>
             </div>
 
           </div>
+
         </div>
       </section>
 
-      <!-- PROJECTS -->
-      <section class="section project" id="project">
+
+
+
+
+      <!-- 
+        - #PROJECTS
+      -->
+
+      <section class="section project" aria-label="my latest projects" id="project">
         <div class="container">
-          <h2 class="h2 title section-title text-center">Selected Projects</h2>
+          <h2 class="h2 section-title text-center" style="margin-bottom: 50px;">Featured Projects</h2>
+        </div>
+
+        <ul class="slider-list">
+
+          <li class="slider-item">
+            <div class="project-card text-center">
+
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="./assets/images/project-1.jpg" width="1000" height="763" loading="lazy"
+                  alt="kenyangGizi project" class="img-cover">
+
+                <a href="#" class="btn btn:hover">
+                  <span class="span">View Details</span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+
+              <div class="card-content">
+                <p class="card-subtitle">CLI Application, Nutrition</p>
+
+                <h3 class="title h3">
+                  <a href="#" class="card-title">kenyangGizi: Smart CLI Nutrition Assistant for Busy Urban Lifestyles</a>
+                </h3>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="slider-item">
+            <div class="project-card text-center">
+
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="./assets/images/project-2.jpg" width="1000" height="763" loading="lazy"
+                  alt="Bridge safety project" class="img-cover">
+
+                <a href="#" class="btn btn:hover">
+                  <span class="span">View Details</span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+
+              <div class="card-content">
+                <p class="card-subtitle">IoT, Safety System</p>
+
+                <h3 class="title h3">
+                  <a href="#" class="card-title">Bridge Safety Prototype: Real-Time Earthquake Detection with Sensor Alarms</a>
+                </h3>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="slider-item">
+            <div class="project-card text-center">
+
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="./assets/images/project-3.jpg" width="1000" height="763" loading="lazy"
+                  alt="Spiel organizer project" class="img-cover">
+
+                <a href="#" class="btn btn:hover">
+                  <span class="span">View Details</span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+
+              <div class="card-content">
+                <p class="card-subtitle">Esports, Brand Strategy</p>
+
+                <h3 class="title h3">
+                  <a href="#" class="card-title">Spiel Organizer: Strategic Esports Initiatives to Amplify Brand Equity</a>
+                </h3>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="slider-item">
+            <div class="project-card text-center">
+
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="./assets/images/project-4.jpg" width="1000" height="763" loading="lazy"
+                  alt="Spiel store project" class="img-cover">
+
+                <a href="#" class="btn btn:hover">
+                  <span class="span">View Details</span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+
+              <div class="card-content">
+                <p class="card-subtitle">E-Commerce, Digital Platform</p>
+
+                <h3 class="title h3">
+                  <a href="#" class="card-title">Spiel Store: Digital Marketplace for Premium Accounts & Secure Services</a>
+                </h3>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="slider-item">
+            <div class="project-card text-center">
+
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="./assets/images/project-5.jpg" width="1000" height="763" loading="lazy"
+                  alt="Digital library project" class="img-cover">
+
+                <a href="#" class="btn btn:hover">
+                  <span class="span">View Details</span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+
+              <div class="card-content">
+                <p class="card-subtitle">Education, Digital Library</p>
+
+                <h3 class="title h3">
+                  <a href="#" class="card-title">Offline Digital Library Implementation for Internet-Limited Areas</a>
+                </h3>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ORGANIZATION
+      -->
+
+      <section class="section about" aria-label="organizational experience" id="organization">
+        <div class="container">
+
+          <h2 class="h2 section-title text-center" style="margin-bottom: 50px;">Organizational Experience</h2>
+
+          <div class="grid-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Staff PSDO HIMATRONIKA-AI</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">Kabinet Navio Enigma 2024/2025</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Ketua Pelaksana Pembekalan</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">HIMATRONIKA-AI 2024/2025</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Ketua Divisi Hacker</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">Algorithmia Fest 2.0 2025</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Staff PSDM</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">ISOLA UPI Purwakarta</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Ketua Pelaksana</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">ISOLA SPORT FEST 2025</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Staff Mentor MOKAKU</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">UPI Purwakarta 2025</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Staff PDD</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">September Hitam</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Wakil Ketua Pelaksana</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">METASTRO 2025</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Finalis Putra</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">Putri UPI Purwakarta 2025</p>
+            </div>
+
+            <div class="service-card" style="padding: 30px; background: var(--bg-lavender-blush); border-radius: 12px;">
+              <h3 class="h5 title" style="margin-bottom: 15px;">Formatur</h3>
+              <p style="font-size: 14px; color: var(--text-granite-gray);">Organisasi Daerah UPI Bekasi (FORBES UPI)</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="section cta" aria-label="work with me">
+        <div class="container">
+
+          <h2 class="title h2 section-title text-center">
+            Let's Collaborate On Your Next Innovation!
+          </h2>
+
+          <a href="mailto:randy@upi.edu" class="btn btn:hover">
+            <span class="span">Get In Touch</span>
+
+            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+          </a>
+
         </div>
       </section>
 
     </article>
   </main>
 
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
   <footer class="footer">
     <div class="container">
+
       <p class="copyright">
-        © 2025 Muhammad Randy Kurniawan
+        © 2025 Muhammad Randy Kurniawan. All Rights Reserved.
       </p>
+
+      <a href="#top" class="back-top-btn">
+        <span class="span">Back To Top</span>
+
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+      </a>
+
     </div>
   </footer>
 
+
+
+
+
+  <!-- 
+    - #CUSTOM CURSOR
+  -->
+
+  <div class="cursor-dot" data-cursor></div>
+  <div class="cursor-outline" data-cursor></div>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
   <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 </html>
