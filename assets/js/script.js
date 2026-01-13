@@ -8,8 +8,10 @@
 
 const preloader = document.querySelector("[data-preloader]");
 
-window.addEventListener("DOMContentLoaded", function () {
-  preloader.classList.add("loaded");
+window.addEventListener("load", function () {
+  if (preloader) {
+    preloader.classList.add("loaded");
+  }
   document.body.classList.add("loaded");
 });
 
